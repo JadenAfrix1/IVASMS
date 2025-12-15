@@ -260,7 +260,7 @@ async def send_telegram_message(context: ContextTypes.DEFAULT_TYPE, chat_id: str
         full_sms_text = message_data.get("full_sms", "N/A")
         service_emoji = SERVICE_EMOJIS.get(service_name, "❓")
         full_message = (
-            f"🔔 *You have successfully received OTP*\n\n"
+            f"🔔 *NEW OTP RECEIVED*\n\n"
             f"📞 *Number:* `{escape_markdown(number_str)}`\n"
             f"🔑 *Code:* `{escape_markdown(code_str)}`\n"
             f"🏆 *Service:* {service_emoji} {escape_markdown(service_name)}\n"

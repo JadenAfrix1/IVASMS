@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.py"
+    }
+  ],
+  "env": {
+    "IVASMS_EMAIL": "@ivasms-email",
+    "IVASMS_PASSWORD": "@ivasms-password",
+    "BOT_TOKEN": "@bot-token",
+    "CHAT_ID": "@chat-id"
+  }
+}

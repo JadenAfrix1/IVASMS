@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ivasms-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 2 wsgi:app & python index.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: IVASMS_EMAIL
+        sync: false
+      - key: IVASMS_PASSWORD
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: CHAT_ID
+        sync: false
+    healthCheckPath: /health
